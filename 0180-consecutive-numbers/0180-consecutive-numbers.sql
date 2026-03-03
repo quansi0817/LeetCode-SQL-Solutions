@@ -1,10 +1,10 @@
-select distinct num As ConsecutiveNums
-From(
-select num,
+SELECT DISTINCT num AS ConsecutiveNums
+FROM(
+SELECT num,
 lead(num,1) over(ORDER BY id )as ConsecutiveNums1,
 lead(num,2) over(ORDER BY id )as ConsecutiveNums2
 
-from logs
+FROM logs
 )temp
 
-Where num = ConsecutiveNums1 and num = ConsecutiveNums2;
+WHERE num = ConsecutiveNums1 AND num = ConsecutiveNums2;
