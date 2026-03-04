@@ -1,14 +1,15 @@
 # Write your MySQL query statement below
-select Email from 
-(select Email, count(Email) as num
+SELECT Email FROM
+(SELECT Email, COUNT(Email) AS num
 
-from Person
+FROM Person
 
-group by Email) as s
-where num >1 ;
+GROUP BY Email) AS s
+WHERE num >1 ;
 
+-------------------------------
 
-select email,
-from Person
-group by email
-having count(email)>1;
+SELECT email,
+FROM Person
+GROUP BY email
+HAVING COUNTG(email)>1;
